@@ -1,0 +1,279 @@
+:root {
+  --menu-color1: rgb(225, 156, 247);
+  --body-color1: rgb(242, 220, 245);
+  --menu-color2: rgb(245, 125, 245);
+  --body-color2: rgb(209, 244, 250);
+}
+
+body {
+  background: var(--body-color1);
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.menubar {
+  background: var(--menu-color1);
+  padding: 1em;
+}
+
+.menubar .menu {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+}
+
+.menubar nav {
+  display: none;
+}
+
+.menubar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.menubar .mobile-menu {
+  cursor: pointer;
+}
+
+section {
+  padding: 2em 2em;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+  gap: 0px 0px;
+      grid-template-areas: "fileselect" "hero" "elements" "tabs";
+}
+
+.fileselect {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: fileselect;
+  background: white;
+  display: inline-block;
+  line-height: 2em;
+  margin: 1em;
+}
+
+.fileselect .file-nav {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.elements {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: elements;
+  margin: 1em;
+  height: 300px;
+  background: white;
+  display: inline-block;
+}
+
+.hero {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hero;
+  margin: 1em;
+  text-align: center;
+}
+
+.hero textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-right: 2em;
+  width: 93%;
+}
+
+.tabs {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: tabs;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  background: grey;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs label {
+  padding: 20px;
+  background: #e2e2e2;
+  font-weight: bold;
+}
+
+.tabs .tab {
+  width: 100%;
+  padding: 15px;
+  background: #fff;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  display: none;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: #fff;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  width: 20%;
+  right: 0;
+  top: 0;
+  background: #d74fdb;
+  height: 50vh;
+  padding: 1em;
+}
+
+nav ul.primary-nav {
+  margin-top: 5em;
+}
+
+nav li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+nav li a:hover {
+  font-weight: bold;
+}
+
+.mobile-menu-exit {
+  float: right;
+  margin: .5em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 950px) {
+  .mobile-menu, .mobile-menu-exit {
+    display: none;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .menubar .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 180px auto;
+        grid-template-columns: 180px auto;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .menubar nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .menubar nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .menubar nav a {
+    color: black;
+    font-size: 1em;
+    padding: .1em 1em;
+  }
+  .menubar nav ul.primary-nav {
+    margin: 0;
+    padding: 0;
+  }
+  .menubar nav li.current a {
+    font-weight: bold;
+  }
+  .hero textarea {
+    width: 93%;
+  }
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+    -ms-grid-rows: auto auto auto;
+        grid-template-rows: auto auto auto;
+    gap: 0px 0px;
+        grid-template-areas: "fileselect hero hero elements" "fileselect bottom bottom bottom";
+  }
+  .hero {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: hero;
+    margin-bottom: -2em;
+    width: 95%;
+  }
+  .fileselect {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: fileselect;
+    margin: 1em;
+    height: 88%;
+  }
+  .bottom {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-area: bottom;
+    margin-right: -1em;
+  }
+  .elements {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: elements;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-left: 1em;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=main.css.map */

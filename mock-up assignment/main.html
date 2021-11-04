@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock-up assignment</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="menubar">
+        <div class="container">
+            <a class="menu">Menu Bar</a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Page1</a></li>
+                    <li><a href="#">Page2</a></li>
+                    <li><a href="#">Page3</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="grid-container">
+
+    <section class="fileselect">
+        <ul>
+            <li><a class="file-nav">Select file:</a></li>
+            <li><a href="files/area_of_a_triangle.c">area_of_a_triangle.c</a></li>
+            <li><a href="files/fibonacci.c">fibonacci.c</a></li>
+         </ul>
+    </section>
+
+    <section class="hero">
+            <textarea id="code" name="text" cols="100" rows="40" placeholder="Put the text code in here"></textarea>
+    </section>
+
+    <section class="elements">
+        Focus on program elements
+    </section>
+
+    <section class="bottom">
+        <div class="tabs">
+            <input type="radio" id="tab1" name="tabs" checked="checked">
+            <label for="tab1">Tab1</label>
+            <div class="tab">
+                <h2>Tab1</h2>
+                <p>You chose tab1</p>
+            </div>
+
+            <input type="radio" id="tab2" name="tabs">
+            <label for="tab2">Tab2</label>
+            <div class="tab">
+                <h2>Tab2</h2>
+                <p>You chose tab2</p>
+            </div>
+
+            <input type="radio" id="tab3" name="tabs">
+            <label for="tab3">Tab3</label>
+            <div class="tab">
+                <h2>Tab3</h2>
+                <p>You chose tab3</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+              nav = document.querySelector('nav')
+              mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+
+
+    </script>
+
+</body>
+</html>
